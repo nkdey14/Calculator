@@ -103,7 +103,7 @@ public class Calculation {
 	{
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter the first number: ");
+		System.out.println("Enter a number: ");
 		
 		long n1 = sc.nextLong();
 		
