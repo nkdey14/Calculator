@@ -1,195 +1,160 @@
-package Exercise2;
-
 import java.util.Scanner;
 
-public class Calculation {
+public class Calculator {
 	
-	// method used for addition of two numbers
+	Scanner sc = new Scanner(System.in);
 	
-	public void addition()
-	{
-		Scanner sc = new Scanner(System.in);
+	public void addition() {
 		
-		System.out.println("Enter the first number: ");
+		System.out.println("\nEnter the First number: ");
 		
 		double n1 = sc.nextDouble();
 		
-		System.out.println("Enter the second number: ");
+		System.out.println("\nEnter the Second number: ");
 		
 		double n2 = sc.nextDouble();
 		
-		double sum = n1 + n2;
-		
-		System.out.println("\nAddition of "+ n1 + " and "+ n2 + " is "+ sum);
+		System.out.println("\nAddition of "+ n1 + " and "+ n2 +" is "+ (n1+n2));
 	}
 	
-	// method used for subtraction of two numbers
-	
-	public void subtraction()
-	{
-		Scanner sc = new Scanner(System.in);
+	public void subtraction() {
 		
-		System.out.println("Enter the first number: ");
+		System.out.println("\nEnter the First number: ");
 		
 		double n1 = sc.nextDouble();
 		
-		System.out.println("Enter the second number: ");
+		System.out.println("\nEnter the Second number: ");
 		
 		double n2 = sc.nextDouble();
 		
-		double sub = n1 - n2;
-		
-		System.out.println("\nSubtraction of "+ n1 + " and "+ n2 + " is "+ sub);
+		System.out.println("\nSubtraction of "+ n1 + " and "+ n2 +" is "+ (n1-n2));
 	}
 	
-	// method used for multiplication of two numbers
-	
-	public void multiplication()
-	{
-		Scanner sc = new Scanner(System.in);
+	public void multiplication() {
 		
-		System.out.println("Enter the first number: ");
+		System.out.println("\nEnter the First number: ");
 		
 		double n1 = sc.nextDouble();
 		
-		System.out.println("Enter the second number: ");
+		System.out.println("\nEnter the Second number: ");
 		
 		double n2 = sc.nextDouble();
 		
-		double mul = n1 * n2;
-		
-		System.out.println("\nMultiplication of "+ n1 + " and "+ n2 + " is "+ mul);
+		System.out.println("\nMultiplication of "+ n1 + " and "+ n2 +" is "+ (n1*n2));
 	}
 	
-	// method used for division of two numbers
-	
-	public void division()
-	{
-		Scanner sc = new Scanner(System.in);
+	public void division() {
 		
-		System.out.println("Enter the first number: ");
+		System.out.println("\nEnter the First number: ");
 		
 		double n1 = sc.nextDouble();
 		
-		System.out.println("Enter the second number: ");
+		System.out.println("\nEnter the Second number: ");
 		
 		double n2 = sc.nextDouble();
 		
-		double div = n1 / n2;
-		
-		System.out.println("\nDivision of "+ n1 + " and "+ n2 + " is "+ div);
+		System.out.println("\nDivision of "+ n1 + " and "+ n2 +" is "+ (n1/n2));
 	}
-	// method used for modulus of two numbers
 	
-	public void modulo()
-	{
-		Scanner sc = new Scanner(System.in);
+	public void modulo() {
 		
-		System.out.println("Enter the first number: ");
+		System.out.println("\nEnter the First number: ");
 		
-		int n1 = sc.nextInt();
+		double n1 = sc.nextDouble();
 		
-		System.out.println("Enter the second number: ");
+		System.out.println("\nEnter the Second number: ");
 		
-		int n2 = sc.nextInt();
+		double n2 = sc.nextDouble();
 		
-		int mod = n1 % n2;
-		
-		System.out.println("\nMod of "+ n1 + " and "+ n2 + " is "+ mod);
+		System.out.println("\nModulo of "+ n1 + " and "+ n2 +" is "+ (n1%n2));
 	}
-	// method used for finding square root of a number
 	
-	public void sqroot()
-	{
-		Scanner sc = new Scanner(System.in);
+	public void squareRoot() {
 		
-		System.out.println("Enter a number: ");
+		System.out.println("\nEnter a number: ");
 		
-		long n1 = sc.nextLong();
+		double n1 = sc.nextDouble();
 		
-		double sqr = Math.sqrt(n1);
+		double sqrt = Math.sqrt(n1);
 		
-		System.out.println("Square root of "+ n1 + " is "+ sqr);
+		System.out.println("\nSquare root of "+ n1 + " is "+ sqrt);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
-		Calculation c = new Calculation(); // created object of the class to access non-static methods
+		Scanner sc = new Scanner(System.in);
+		
+		Calculator c = new Calculator();
 		
 		int ch;
 		
-		Scanner sc1 = new Scanner(System.in);
-		
 		System.out.println("Enter your name: ");
 		
-		String name = sc1.nextLine();
+		String name = sc.nextLine();
 		
-		System.out.println("\nHi "+name+", "+"Nice to see you!"+"\n");
+		Thread.sleep(1000);
 		
-		x: do { 
+		System.out.println("\nHi "+ name + ", Nice to see you!");
+		
+		Thread.sleep(2000);
+		
+		x:do {
 			
-		System.out.println("\n---------------------------- Nitin's Calculator ---------------------------");
-			
-		System.out.println("---------------------------------------------------------------------------");
-			
-		Scanner sc = new Scanner(System.in);
+		System.out.println("\n\nEnter your choice: \n\n1. Addition \n\n2. Subtraction \n\n3. Multiplication \n\n4. Division \n\n5. Modulo \n\n6. Square root");
 		
-		System.out.println("\nPlease Enter your choice ..... \n\n1. Addititon \n2. Subtraction \n3. Multiplication \n4. Division \n5. Modulo \n6. Square root");
+		ch = sc.nextInt();
 		
-		System.out.println();
+		switch(ch) {
 		
-		ch = sc.nextInt(); // taking input from the user
-		
-		switch(ch)  // based on user input performing operations
-		{
-			case 1:
-			
-				c.addition();  // performs addition
+		case 1:
+				c.addition();
 				break;
 				
-			case 2:
-				
-				c.subtraction();  // performs subtraction
-				break;
-				
-			case 3:
-				
-				c.multiplication();  // performs multiplication
-				break;
-				
-			case 4:
-				
-				c.division();  // performs division
-				break;
-				
-			case 5:
-				
-				c.modulo();  // performs modulus
-				break;
-				
-			case 6:
-				
-				c.sqroot();  // finds square root
-				break;
+		case 2:
 			
-			default:
+				c.subtraction();
+				break;
+				
+		case 3:
+				
+				c.multiplication();
+				break;
+				
+		case 4:
 			
-				System.out.println("Invalid choice. \nPlease choose a correct option.");
+				c.division();
+				break;
+		
+		case 5:
 			
+				c.modulo();
+				break;
+				
+		case 6:
+			
+				c.squareRoot();
+				break;
+				
+		default:
+			
+				System.out.println("\n\nInvalid choice. Please choose a correct option.");
 		}
+		Thread.sleep(1000);
 		
-		System.out.println("\nDo you want to continue? (yes/no)");
+		System.out.println("\n\nDo you want to continue?(yes/no)");
 		
 		String ans = sc.next();
 		
-		if(ans.equalsIgnoreCase("no"))
-		{
+		if(ans.equalsIgnoreCase("no") || ans.equalsIgnoreCase("n")) {
+			
 			break x;
 		}
-		
-		}while(ch != 0);	
-		
-		System.out.println("\nThanks for using Nitin's Calculator. Have a good day!");
-	}
 
+		}while(ch != 0);
+		
+		Thread.sleep(1000);
+		
+		System.out.println("\n\nThanks for using Nitin's Calculator. Have a Nice Day!");
+		
+	}
 }
